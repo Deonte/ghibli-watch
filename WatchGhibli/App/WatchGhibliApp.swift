@@ -11,7 +11,7 @@ import SwiftUI
 struct WatchGhibliApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            MovieListView()
         }
     }
 }

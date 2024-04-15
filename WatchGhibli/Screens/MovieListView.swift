@@ -1,5 +1,5 @@
 //
-//  WatchHistoryView.swift
+//  MovieListView.swift
 //  WatchGhibli
 //
 //  Created by Deonte Kilgore on 4/15/24.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct WatchHistoryView: View {
+struct MovieListView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            Text("I was here.")
         }
-        .navigationTitle("History")
+        .navigationTitle("Movies")
     }
 }
 
 #Preview {
-    WatchHistoryView()
+    MovieListView()
 }
