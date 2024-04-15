@@ -1,5 +1,5 @@
 //
-//  Favorites.swift
+//  FavoritesView.swift
 //  WatchGhibli
 //
 //  Created by Deonte Kilgore on 4/15/24.
