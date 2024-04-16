@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Codable {
+struct Movie: Codable, Identifiable {
     let id: String
     let title: String
     let originalTitle: String
@@ -36,5 +36,22 @@ struct Movie: Codable {
         case runningTime = "running_time"
         case rtScore = "rt_score"
         case url
+    }
+}
+
+class MoviesViewModel: ObservableObject {
+    @Published var movies: [Movie] = []
+
+    init() {
+        loadMovies()
+    }
+
+    func loadMovies() {
+        guard let url = Bundle.main.url(forResource: "data", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let decodedMovies = try? JSONDecoder().decode([Movie].self, from: data) else {
+            return
+        }
+        self.movies = decodedMovies
     }
 }

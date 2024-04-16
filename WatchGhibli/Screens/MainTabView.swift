@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @StateObject private var moviesViewModel = MoviesViewModel()
+
     var body: some View {
         TabView {
             NavigationStack {
@@ -30,6 +32,7 @@ struct MainTabView: View {
                 Label("History", systemImage: "clock.arrow.circlepath")
             }
         }
+        .environmentObject(moviesViewModel)
     }
 }
 

@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct MovieListView: View {
-    var body: some View {
-        VStack {
-            Text("I was here.")
+    @EnvironmentObject var moviesViewModel: MoviesViewModel
+
+        var body: some View {
+            List(moviesViewModel.movies) { movie in
+                Text(movie.title)
+//                NavigationLink(destination: MovieDetailView(movie: movie)) {
+//                    Text(movie.title)
+//                }
+            }
+            .navigationTitle("Movies")
         }
-        .navigationTitle("Movies")
-    }
+    
 }
 
 #Preview {
